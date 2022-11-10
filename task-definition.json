@@ -1,11 +1,11 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-2:348696523535:task-definition/jaime-app:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:348696523535:task-definition/cb-app-task:6",
     "containerDefinitions": [
         {
-            "name": "jaime-app",
+            "name": "cb-app",
             "image": "348696523535.dkr.ecr.us-west-2.amazonaws.com/jaime",
-            "cpu": 0,
-            "links": [],
+            "cpu": 1024,
+            "memory": 2048,
             "portMappings": [
                 {
                     "containerPort": 80,
@@ -14,36 +14,23 @@
                 }
             ],
             "essential": true,
-            "entryPoint": [],
-            "command": [],
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "secrets": [],
-            "dnsServers": [],
-            "dnsSearchDomains": [],
-            "extraHosts": [],
-            "dockerSecurityOptions": [],
-            "dockerLabels": {},
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/jaime-app",
+                    "awslogs-group": "/ecs/cb-app",
                     "awslogs-region": "us-west-2",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
-            },
-            "systemControls": []
+                }
+            }
         }
     ],
-    "family": "jaime-app",
-    "executionRoleArn": "arn:aws:iam::348696523535:role/ecsTaskExecutionRole",
+    "family": "cb-app-task",
+    "executionRoleArn": "arn:aws:iam::348696523535:role/myEcsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 6,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -60,9 +47,6 @@
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
-        },
-        {
             "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
@@ -70,9 +54,6 @@
         },
         {
             "name": "ecs.capability.task-eni"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
@@ -85,20 +66,7 @@
     ],
     "cpu": "1024",
     "memory": "2048",
-    "runtimePlatform": {
-        "cpuArchitecture": "X86_64",
-        "operatingSystemFamily": "LINUX"
-    },
-    "registeredAt": "2022-11-10T21:52:04.800Z",
+    "registeredAt": "2022-11-10T22:54:50.539Z",
     "registeredBy": "arn:aws:iam::348696523535:root",
-    "tags": [
-        {
-            "key": "ecs:taskDefinition:createdFrom",
-            "value": "ecs-console-v2"
-        },
-        {
-            "key": "ecs:taskDefinition:stackId",
-            "value": "arn:aws:cloudformation:us-west-2:348696523535:stack/ECS-Console-V2-TaskDefinition-60e68db0-9a06-43f9-9c40-b1faa53d53b4/e66ee830-6141-11ed-8891-0a5d61e61e9b"
-        }
-    ]
+    "tags": []
 }
