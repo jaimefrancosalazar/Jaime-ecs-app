@@ -8,3 +8,4 @@ RUN npm install --silent
 EXPOSE 80
 USER node
 CMD ["npm", "start"]
+#end
