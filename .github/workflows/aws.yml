@@ -1,6 +1,5 @@
 # This workflow will build and push a new container image to Amazon ECR,
 # and then will deploy a new task definition to Amazon ECS, when there is a push to the "main" branch.
-#
 # To use this workflow, you will need to complete the following set-up steps:
 # 1. Create an ECR repository to store your images.
 #    For example: `aws ecr create-repository --repository-name my-ecr-repo --region us-east-2`.
@@ -35,7 +34,7 @@ env:
   ECS_CLUSTER: cb-cluster                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: task-definition.json  # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: jaime-app          # set this to the name of the container in the
+  CONTAINER_NAME: cb-app          # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
 permissions:
